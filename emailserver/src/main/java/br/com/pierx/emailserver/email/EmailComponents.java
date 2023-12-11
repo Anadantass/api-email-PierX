@@ -1,12 +1,6 @@
 package br.com.pierx.emailserver.email;
 
-import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration;
-
-public class EmailComponents {
+public record EmailComponents(String to, String subject, String body) {
 	
-	public void EmailComponets(String payload) {
-		System.out.println(payload);
-		
-	}
 
 }

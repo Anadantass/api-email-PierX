@@ -1,5 +1,7 @@
 package br.com.pierx.emailserver.controller;
 
+import java.util.Arrays;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +14,8 @@ import br.com.pierx.emailserver.email.EmailComponents;
 public class EmailController {
 	
 	@PostMapping
-	public void email(@RequestBody EmailComponents components) {
-		System.out.println(components);
+	public void email(@RequestBody EmailComponents[] components) {
+		System.out.println(Arrays.toString(components));
 		
 	}
 	
