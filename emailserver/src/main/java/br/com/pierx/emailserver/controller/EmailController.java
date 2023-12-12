@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.pierx.emailserver.email.EmailComponents;
 
 @RestController
-@RequestMapping("/email")
+@RequestMapping("")
 public class EmailController {
 	
 	@PostMapping

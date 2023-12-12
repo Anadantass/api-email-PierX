@@ -4,6 +4,7 @@ package br.com.pierx.emailserver.email;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -22,12 +23,12 @@ import br.com.pierx.emailserver.controller.EmailController;
 
 
 
-@Service
-@RequestMapping("/send")
+@RestController
+@RequestMapping("/email")
 public class SendEmails {
 	
-	@GetMapping
-	private static void sendEmail(EmailComponents[] payload) {
+	@PostMapping
+	private static void sendEmail(@RequestBody EmailComponents[] payload) {
         BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIA5R7XGHT2BXG6Z22C", "A1fSmsSnTHZtg8Rg+9WHHPrcb2DRlnYyz4BWpUms");
 
         AmazonSimpleEmailService client = AmazonSimpleEmailServiceClientBuilder.standard()
@@ -47,7 +48,7 @@ public class SendEmails {
 
             client.sendEmail(request);
             System.out.println(payload[i]);
-        }
+        }  
         
     }
 
