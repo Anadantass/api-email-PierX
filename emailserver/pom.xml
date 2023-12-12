@@ -34,6 +34,12 @@
       		<scope>runtime</scope>
       		<optional>true</optional>
     	</dependency>
+
+		<dependency>
+        	<groupId>com.amazonaws</groupId>
+        	<artifactId>aws-java-sdk-ses</artifactId>
+        	<version>1.12.609</version> 
+    	</dependency>
     	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
